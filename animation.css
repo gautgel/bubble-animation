@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+@font-face
+{
+  font-family: "Comfortaa";
+  src:url("fonts/Comfortaa-VariableFont:wght.ttf");
+}
+
+@font-face
+{
+  font-family: "Pacifico";
+  src:url("fonts/Pacifico-Regular.ttf");
+}
+  
+body {
+  background-color:#202830;
+  color:#ffffff;
+  height:100%;
+  width:100%;
+  overflow-x: hidden;
+}
+
+loader
+{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #202830;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+  transition: .5s;
+}
+
+.bubble
+{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: #2664a1;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #000;
+  overflow: hidden;
+}
+
+.bubble::before
+{
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  border-radius: 40%;
+  background: #111;
+  transform: translate(-50%, -50%);
+  opacity: .6;
+  animation: liquid1 2s linear alternate infinite;
+}
+
+.bubble::after
+{
+  content: '';
+  position: absolute;
+  /* top: -30%; */
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  border-radius: 40%;
+  background: #111;
+  transform: translate(-50%, -50%);
+  opacity: .3;
+  animation: liquid2 2s linear alternate infinite;
+}
+
+@keyframes liquid1
+{
+  0%
+  {
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100%
+  {
+    top: -90%;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes liquid2
+{
+  0%
+  {
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100%
+  {
+    top: -90%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
